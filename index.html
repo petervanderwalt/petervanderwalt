@@ -315,13 +315,24 @@
     }
 
     .card-links a {
-      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 14px;
+      border: 1px solid rgba(22, 27, 34, 0.16);
+      background: rgba(255, 255, 255, 0.84);
+      color: var(--text);
       font-weight: 600;
       text-decoration: none;
+      transition: border-color 180ms ease, background 180ms ease, color 180ms ease, transform 180ms ease;
     }
 
     .card-links a:hover {
-      color: #084c3e;
+      color: var(--accent);
+      border-color: rgba(13, 107, 87, 0.34);
+      background: rgba(13, 107, 87, 0.08);
+      transform: translateY(-1px);
     }
 
     .empty {
@@ -686,6 +697,52 @@
         liveUrl: "https://petervanderwalt.github.io/javascript-stm32-flasher/",
         repoUrl: "https://github.com/petervanderwalt/javascript-stm32-flasher",
         tags: ["STM32", "DFU", "Firmware", "WebUSB"]
+      },
+      {
+        title: "OpenHardware.co.za RepRap Kits",
+        category: "Hardware",
+        status: "Archived",
+        type: "hardware",
+        intro: "In 2012 and 2013 we moved around 600 RepRap kits as one of the first 3D printing suppliers in South Africa.",
+        description: "These were locally produced kits from the OpenHardware.co.za days, built around the early RepRap ecosystem. That period covered the hardware, electronics, sourcing, assembly, and the practical work of getting affordable 3D printers into users' hands locally.",
+        screenshot: "assets/screenshots/openhardwarecoza-reprap-kits.png",
+        liveUrl: "https://openhardwarecoza.wordpress.com/",
+        tags: ["3D Printer", "RepRap", "openhardware.co.za", "South Africa"]
+      },
+      {
+        title: "OpenHardware.co.za 3D Printer Controllers",
+        category: "Hardware",
+        status: "Archived",
+        type: "hardware",
+        intro: "In 2013 I developed OpenHardware.co.za 3D printer controllers for our locally developed RepRap kits.",
+        description: "These boards ran Repetier Firmware and formed part of the early locally developed 3D printer kits we were building and shipping during the OpenHardware.co.za period.",
+        screenshot: "assets/screenshots/openhardwarecoza-3d-printer-controllers.png",
+        liveUrl: "https://openhardwarecoza.wordpress.com/",
+        tags: ["3D Printer", "Electronics", "Repetier", "openhardware.co.za"]
+      },
+      {
+        title: "BabyBot",
+        category: "Hardware",
+        status: "Archived",
+        type: "repo",
+        intro: "Around 2014 I designed BabyBot, a sub-$500 folded sheet-metal 3D printer during the openhardware.co.za days.",
+        description: "BabyBot was an early low-cost machine concept built around folded sheet metal construction and an open hardware approach. It sits in the earlier part of my work, before the CNC product work that came later.",
+        screenshot: "assets/screenshots/babybot2021.png",
+        liveUrl: "https://github.com/openhardwarecoza/Babybot2021",
+        repoUrl: "https://github.com/openhardwarecoza/Babybot2021",
+        tags: ["3D Printer", "Hardware", "openhardware.co.za", "Sheet Metal"]
+      },
+      {
+        title: "OpenCNC-ZA",
+        category: "Hardware",
+        status: "Archived",
+        type: "repo",
+        intro: "OpenCNC-ZA was one of my earlier openhardware.co.za CNC machine projects.",
+        description: "It belongs to the same early open hardware period as BabyBot and reflects the practical machine-building work I was doing before the later OpenBuilds, Ooznest, and Sienci product lines.",
+        screenshot: "assets/screenshots/opencnc-za.png",
+        liveUrl: "https://github.com/openhardwarecoza/OPHW-HW-OpenCNC-ZA",
+        repoUrl: "https://github.com/openhardwarecoza/OPHW-HW-OpenCNC-ZA",
+        tags: ["CNC", "Hardware", "openhardware.co.za", "Open Source"]
       }
     ];
 
