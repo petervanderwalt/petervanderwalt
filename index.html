@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peter van der Walt | Project Portfolio</title>
+  <meta name="description" content="A portfolio of CNC, CAM, firmware, electronics, and developer-tooling projects by Peter van der Walt.">
+  <style>
+    :root {
+      --bg: #eef1f4;
+      --panel: rgba(255, 255, 255, 0.98);
+      --panel-strong: rgba(246, 248, 250, 0.98);
+      --line: rgba(29, 39, 51, 0.18);
+      --text: #161b22;
+      --muted: #55606b;
+      --accent: #0d6b57;
+      --shadow: 0 18px 40px rgba(53, 61, 69, 0.12);
+      --max: 1120px;
+      --font-display: "Segoe UI", "Aptos Display", "Trebuchet MS", sans-serif;
+      --font-body: "Segoe UI", "Aptos", system-ui, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font-body);
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(13, 107, 87, 0.08), transparent 30%),
+        radial-gradient(circle at top right, rgba(70, 112, 160, 0.08), transparent 26%),
+        linear-gradient(180deg, #f7f9fb 0%, #f0f3f6 48%, #e8edf2 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(rgba(18, 27, 34, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(18, 27, 34, 0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.65), transparent);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .shell {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+      padding: 32px 0 72px;
+    }
+
+    .hero {
+      padding: 0 0 10px;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+    }
+
+    .avatar {
+      width: 112px;
+      height: 112px;
+      flex: 0 0 112px;
+      object-fit: cover;
+      border: 1px solid rgba(22, 27, 34, 0.16);
+      box-shadow: none;
+      background: #fff;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(22, 27, 34, 0.1);
+      letter-spacing: 0.04em;
+    }
+
+    .hero-copy {
+      display: grid;
+      gap: 8px;
+      align-content: start;
+      max-width: 820px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      max-width: none;
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2vw, 1.9rem);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-role {
+      margin: 0;
+      color: #33404b;
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .hero p {
+      max-width: none;
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .hero-actions,
+    .toolbar,
+    .card-links,
+    .card-meta,
+    .footer-note {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-actions {
+      margin-top: 18px;
+      padding-left: 136px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button.primary {
+      color: #f8f5ee;
+      background: linear-gradient(135deg, var(--accent), #2f8b74);
+    }
+
+    .button.secondary {
+      color: var(--text);
+      border-color: rgba(22, 27, 34, 0.16);
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    .section-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin: 38px 0 18px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      letter-spacing: -0.03em;
+    }
+
+    .toolbar {
+      justify-content: flex-start;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 10px 14px;
+      font-size: 0.92rem;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.62);
+      cursor: pointer;
+      transition: border-color 180ms ease, color 180ms ease, background 180ms ease;
+    }
+
+    .tag.active,
+    .tag:hover {
+      color: var(--text);
+      border-color: rgba(13, 107, 87, 0.4);
+      background: rgba(13, 107, 87, 0.1);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 248, 250, 0.96));
+      box-shadow: 0 12px 26px rgba(53, 61, 69, 0.1);
+      transform: translateY(24px);
+      opacity: 0;
+      animation: card-in 520ms ease forwards;
+    }
+
+    .card-media {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(124, 196, 255, 0.12), rgba(79, 209, 181, 0.1));
+      border-bottom: 1px solid var(--line);
+    }
+
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 14px;
+      padding: 18px 18px 20px;
+    }
+
+    .card-kicker {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .card-kicker span {
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .status {
+      padding: 6px 10px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #071319;
+      background: linear-gradient(135deg, #93ffd6, #56e2c0);
+    }
+
+    .status.live {
+      background: linear-gradient(135deg, #7cc4ff, #bce6ff);
+    }
+
+    .status.wip {
+      background: linear-gradient(135deg, #cfd8e3, #aebbc9);
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.32rem;
+      line-height: 1.2;
+    }
+
+    .lede,
+    .blurb {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .lede {
+      color: #1f2933;
+      font-size: 0.98rem;
+    }
+
+    .card-meta {
+      margin-top: auto;
+      padding-top: 6px;
+    }
+
+    .meta-chip {
+      padding: 8px 10px;
+      font-size: 0.84rem;
+      color: #16354b;
+      background: #dcecf8;
+      border: 1px solid #a9c9df;
+    }
+
+    .card-links a {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .card-links a:hover {
+      color: #084c3e;
+    }
+
+    .empty {
+      display: none;
+      padding: 28px;
+      border: 1px dashed rgba(22, 27, 34, 0.14);
+      color: var(--muted);
+      text-align: center;
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .footer-note {
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 34px;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      background: var(--panel-strong);
+    }
+
+    @keyframes card-in {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .shell {
+        width: min(calc(100% - 24px), var(--max));
+        padding-top: 18px;
+      }
+
+      .hero {
+        padding: 0 0 10px;
+      }
+
+      .hero-top {
+        display: block;
+      }
+
+      .toolbar {
+        align-items: stretch;
+      }
+
+      .avatar {
+        display: block;
+        width: 96px;
+        height: 96px;
+        margin-bottom: 16px;
+        flex: none;
+      }
+
+      .hero-actions {
+        padding-left: 0;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-top">
+        <img class="avatar" src="https://avatars.githubusercontent.com/u/31449271?s=400&amp;u=c9b1782b01f3f4f23159767e973baf258dc3b7bc&amp;v=4" alt="Peter van der Walt profile photo">
+        <div class="hero-copy">
+          <p class="hero-role">CNC Product and Embedded Systems Engineer</p>
+          <h1>Peter van der Walt</h1>
+          <p>
+            I’m Peter van der Walt, a CNC product and embedded systems engineer with experience at OpenBuilds, Ooznest and Sienci Labs. I develop the electronics, firmware and machine-control systems behind CNC products, from early prototypes and PCB design through testing, production support and customer-facing software.
+          </p>
+          <p>
+            My work sits between engineering disciplines: I debug hardware, write embedded firmware, integrate motion-control and VFD systems, improve machine reliability, and turn field problems into practical product changes. I also contribute extensively to open-source CNC projects, with much of my technical work and documentation available on GitHub.
+          </p>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a class="button primary" href="#projects">Browse Projects</a>
+        <a class="button secondary" href="https://github.com/petervanderwalt" target="_blank" rel="noreferrer">GitHub Profile</a>
+      </div>
+    </section>
+
+    <div class="section-head">
+      <div>
+        <h2 id="projects">Project Portfolio</h2>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <div class="filters" id="filters"></div>
+    </div>
+
+    <section class="grid" id="grid" aria-live="polite"></section>
+    <div class="empty" id="empty">No projects match the current filter.</div>
+
+    <div class="footer-note">
+      <span>Built as a static portfolio page for the GitHub profile repository.</span>
+      <span>Last curated on July 21, 2026.</span>
+    </div>
+  </main>
+
+  <script>
+    const projects = [
+      {
+        title: "Ooznest Control",
+        category: "Machine Control",
+        status: "Shipped",
+        type: "live",
+        intro: "I joined Ooznest in 2025 and have spent almost the last year developing Ooznest Control.",
+        description: "Ooznest Control is a ground-up new grblHAL host for the WorkBee CNC and the Ooznest Motion Control Core system. It is a modern machine-control stack built around real production use: job streaming, probing, tooling, machine setup, and the practical day-to-day workflows that matter on the shop floor.",
+        screenshot: "assets/screenshots/ooznest-control.png",
+        liveUrl: "https://ooznest.github.io/ooznest-control",
+        repoUrl: "https://github.com/ooznest/ooznest-control",
+        tags: ["CNC", "Control", "grblHAL", "WebSerial"]
+      },
+      {
+        title: "Ooznest Motion Control Core",
+        category: "Electronics",
+        status: "Shipped",
+        type: "hardware",
+        intro: "I developed the Motion Control Core grblHAL-based CNC and actuator controller for Ooznest.",
+        description: "This is the controller platform behind the Ooznest control stack, built around grblHAL and extended for CNC and actuator control duties. It ties together the firmware, machine-control, and electronics parts of the work in one hardware platform.",
+        screenshot: "assets/screenshots/ooznest-motion-control-core.png",
+        liveUrl: "https://ooznest.co.uk/",
+        tags: ["Electronics", "grblHAL", "Controller", "Ooznest"]
+      },
+      {
+        title: "OpenBuilds CONTROL",
+        category: "Machine Control",
+        status: "Shipped",
+        type: "repo",
+        intro: "I worked at OpenBuilds from 2017 to 2025 and was the lead developer on OpenBuilds CONTROL.",
+        description: "OpenBuilds CONTROL is the machine-control application for the OpenBuilds ecosystem, covering connection, jogging, macros, probing, diagnostics, and reliable G-code streaming. Over its lifetime it has passed 1.8 million downloads and the repository has 155 forks, which gives some sense of the reach it achieved.",
+        screenshot: "assets/screenshots/openbuilds-control-custom.png",
+        liveUrl: "https://software.openbuilds.com/",
+        repoUrl: "https://github.com/OpenBuilds/OpenBuilds-CONTROL",
+        tags: ["CNC", "Control", "OpenBuilds", "Electron"]
+      },
+      {
+        title: "OpenBuilds CAM",
+        category: "CAM",
+        status: "Shipped",
+        type: "live",
+        intro: "I worked at OpenBuilds from 2017 to 2025 and was the lead developer on OpenBuilds CAM.",
+        description: "OpenBuilds CAM is a browser-based CAM workflow for turning vectors into machine-ready toolpaths and G-code. Recent analytics show roughly 43K active users and 41K new users over the last calendar year, with 464K events recorded, while the current-year view shows about 104K page views and a broad international user base.",
+        screenshot: "assets/screenshots/openbuilds-cam-custom.png",
+        liveUrl: "https://cam.openbuilds.com/",
+        tags: ["CAM", "G-code", "SVG", "DXF"]
+      },
+      {
+        title: "OpenBuilds BlackBox 4X",
+        category: "Electronics",
+        status: "Shipped",
+        type: "hardware",
+        intro: "I developed the electronics for the first-generation OpenBuilds BlackBox 4X motion control system.",
+        description: "BlackBox 4X was the first-generation all-in-one OpenBuilds motion controller, bringing drivers, power handling, control I/O, and a cleaner integrated hardware platform together in one product.",
+        screenshot: "assets/screenshots/openbuilds-blackbox-4x.png",
+        liveUrl: "https://builds.openbuilds.com/builds/blackbox-motion-control-system.8320/",
+        tags: ["Electronics", "Motion Controller", "OpenBuilds", "CNC"]
+      },
+      {
+        title: "OpenBuilds BlackBox X32",
+        category: "Electronics",
+        status: "Shipped",
+        type: "hardware",
+        intro: "I also developed the electronics for BlackBox X32, the next-generation OpenBuilds controller.",
+        description: "BlackBox X32 pushed the platform forward into the 32-bit generation, building on the original BlackBox concept with a more advanced controller architecture and updated hardware stack.",
+        screenshot: "assets/screenshots/openbuilds-blackbox-x32.png",
+        liveUrl: "https://builds.openbuilds.com/builds/blackbox-x32.10381/",
+        tags: ["Electronics", "32-bit", "OpenBuilds", "CNC"]
+      },
+      {
+        title: "OpenBuilds Interface",
+        category: "Electronics",
+        status: "Shipped",
+        type: "hardware",
+        intro: "I developed the electronics for the OpenBuilds Interface, and the closed-source firmware.",
+        description: "The Interface is a dedicated machine control pendant and display unit for OpenBuilds systems, giving users a direct hardware control surface for running jobs and managing the machine away from a laptop. My work on it covered both the electronics and the device firmware.",
+        screenshot: "assets/screenshots/openbuilds-interface.png",
+        liveUrl: "https://builds.openbuilds.com/builds/interface-cnc-touch-control-system.9688/",
+        tags: ["Electronics", "Pendant", "OpenBuilds", "Machine Control"]
+      },
+      {
+        title: "OpenBuilds XYZ Probe Block",
+        category: "Electronics",
+        status: "Shipped",
+        type: "hardware",
+        intro: "I developed the electronics for the OpenBuilds XYZ Probe block.",
+        description: "The XYZ Probe block is a probing accessory for machine setup and zeroing workflows. My contribution was on the electronics side, supporting a simple and reliable setup tool for everyday CNC use.",
+        screenshot: "assets/screenshots/openbuilds-xyz-probe.png",
+        liveUrl: "https://openbuildspartstore.com/xyz-probe-plus/",
+        tags: ["Electronics", "Probe", "OpenBuilds", "Setup"]
+      },
+      {
+        title: "Sienci Labs ATC Spindle Backpack",
+        category: "Electronics",
+        status: "Shipped",
+        type: "hardware",
+        intro: "I helped design and lay out the electronics for the Sienci Labs ATC spindle backpack.",
+        description: "This board sits in the automatic tool changer spindle system and handles the real-world signals and interfaces needed around that hardware. My contribution was on the electronics design and PCB layout side.",
+        screenshot: "assets/screenshots/sienci-atc-spindle-backpack.png",
+        liveUrl: "https://youtu.be/HlgAy9KUUtI?t=446",
+        tags: ["Electronics", "PCB Layout", "ATC", "Sienci Labs"]
+      },
+      {
+        title: "Sienci Labs SLB-Lite",
+        category: "Electronics",
+        status: "In Development",
+        type: "hardware",
+        intro: "I also developed the Sienci Labs SLB-Lite controller for the upcoming LongMill MK3 CNC machine.",
+        description: "SLB-Lite is the controller platform for the next-generation LongMill MK3. It sits in the same body of work for me as motion control electronics, controller architecture, and the practical hardware needed to support real CNC use.",
+        screenshot: "assets/screenshots/sienci-slb-lite.png",
+        liveUrl: "https://sienci.com/",
+        tags: ["Electronics", "Controller", "Sienci Labs", "LongMill MK3"]
+      },
+      {
+        title: "CAM Community Fork",
+        category: "CAM",
+        status: "Community",
+        type: "live",
+        intro: "I started this as a community continuation of OpenBuilds CAM.",
+        description: "The aim here is simple: keep a useful browser CAM tool alive, open, and improving. It carries forward the workflow many users already know while giving the community a place to maintain and extend it.",
+        screenshot: "assets/screenshots/cam-community-fork.png",
+        liveUrl: "https://petervanderwalt.github.io/CAM-Community-Fork/",
+        repoUrl: "https://github.com/petervanderwalt/CAM-Community-Fork",
+        tags: ["CAM", "Community", "Fork", "G-code"]
+      },
+      {
+        title: "Cabinet Studio",
+        category: "Manufacturing",
+        status: "In Development",
+        type: "live",
+        intro: "Cabinet Studio is my cabinet design, part generation, and nesting workflow.",
+        description: "I built it to cover the practical flow from cabinet parameters through to cut-ready parts and sheet usage. The focus is on turning cabinet ideas into production data without a lot of software overhead.",
+        screenshot: "assets/screenshots/cabinet-studio.png",
+        liveUrl: "https://petervanderwalt.github.io/cabinet-studio/",
+        repoUrl: "https://github.com/petervanderwalt/cabinet-studio",
+        tags: ["Cabinetry", "Nesting", "CAM", "Production"]
+      },
+      {
+        title: "CAM Engine Demo",
+        category: "CAM",
+        status: "Prototype",
+        type: "live",
+        intro: "A working demo of the CAM engine underneath several of my CAM projects.",
+        description: "I use it to develop and validate the core engine directly: geometry in, operations selected, toolpaths generated, and G-code out.",
+        screenshot: "assets/screenshots/cam-engine-demo.png",
+        liveUrl: "https://petervanderwalt.github.io/cam-engine/demo/",
+        repoUrl: "https://github.com/petervanderwalt/cam-engine",
+        tags: ["CAM", "Engine", "Toolpath", "3D Preview"]
+      },
+      {
+        title: "grblHAL Documentation",
+        category: "Documentation",
+        status: "Ongoing",
+        type: "live",
+        intro: "I am building this to become the main documentation set for grblHAL firmware.",
+        description: "The goal is to give grblHAL a clearer, more complete technical reference covering architecture, setup, features, and target-specific details. A lot of the value here is in making a broad firmware ecosystem easier to understand and support.",
+        screenshot: "assets/screenshots/grblhal-docs-detail.png",
+        liveUrl: "https://petervanderwalt.github.io/grblhal_docs/01-Getting-Started/01-what-is-grblhal.html",
+        repoUrl: "https://github.com/petervanderwalt/grblhal_docs",
+        tags: ["Docs", "Firmware", "grblHAL", "Knowledge Base"]
+      },
+      {
+        title: "Contributes to grblHAL",
+        category: "Firmware",
+        status: "Ongoing",
+        type: "repo",
+        intro: "I contribute directly to grblHAL targets including ESP32, RP2040, STM32F4xx, and more.",
+        description: "This is the firmware-side part of my work: target support, fixes, features, and upstream contributions across multiple MCU families, alongside the host software and documentation work around the wider grblHAL ecosystem.",
+        screenshot: "assets/screenshots/grblhal-firmware.png",
+        liveUrl: "https://github.com/grblHAL/ESP32/pulls?q=is%3Apr+author%3Apetervanderwalt",
+        repoUrl: "https://github.com/grblHAL/ESP32/pulls?q=is%3Apr+author%3Apetervanderwalt",
+        extraLinks: [
+          { label: "ESP32 PRs", url: "https://github.com/grblHAL/ESP32/pulls?q=is%3Apr+author%3Apetervanderwalt" },
+          { label: "RP2040 PRs", url: "https://github.com/grblHAL/RP2040/pulls?q=is%3Apr+author%3Apetervanderwalt+" },
+          { label: "STM32F4xx PRs", url: "https://github.com/grblHAL/STM32F4xx/pulls?q=is%3Apr+author%3Apetervanderwalt+" },
+          { label: "And many more", url: "https://github.com/search?q=author%3Apetervanderwalt+grblHAL&type=pullrequests" }
+        ],
+        tags: ["Firmware", "grblHAL", "grblHAL Firmware", "Contributions"]
+      },
+      {
+        title: "cheetah",
+        category: "Developer Tooling",
+        status: "Live",
+        type: "repo",
+        intro: "cheetah is my lightweight markdown editor and static site generator.",
+        description: "I built it around a simple idea: documentation should live on disk, build quickly, and stay out of your way. It is intentionally small, direct, and free of unnecessary framework baggage.",
+        screenshot: "assets/screenshots/cheetah.png",
+        liveUrl: "https://github.com/petervanderwalt/cheetah",
+        repoUrl: "https://github.com/petervanderwalt/cheetah",
+        tags: ["Docs", "Static Site", "Markdown", "Tooling"]
+      },
+      {
+        title: "JavaScript Gerber Viewer",
+        category: "Electronics",
+        status: "Live",
+        type: "live",
+        intro: "A browser-based Gerber viewer for PCB fabrication files.",
+        description: "I built it to make Gerber inspection easier in the browser, with 2D and 3D viewing plus SVG and PNG export for quick checks and sharing.",
+        screenshot: "assets/screenshots/gerber-viewer-custom.png",
+        liveUrl: "https://petervanderwalt.github.io/javascript-gerber-viewer/",
+        repoUrl: "https://github.com/petervanderwalt/javascript-gerber-viewer",
+        tags: ["Gerber", "PCB", "Electronics", "Visualization"]
+      },
+      {
+        title: "H100 VFD Configurator",
+        category: "Electronics",
+        status: "Prototype",
+        type: "repo",
+        intro: "A dashboard and parameter editor for H100 VFD drives.",
+        description: "It brings telemetry, spindle control, parameter editing, and live charts into one interface. I built it as a practical shop-floor tool for configuring and monitoring a VFD.",
+        screenshot: "assets/screenshots/h100-vfd-configurator.png",
+        liveUrl: "https://github.com/petervanderwalt/H100_VFD_Configurator",
+        repoUrl: "https://github.com/petervanderwalt/H100_VFD_Configurator",
+        tags: ["VFD", "Modbus", "Dashboard", "Electronics"]
+      },
+      {
+        title: "Web Serial Terminal",
+        category: "Developer Tooling",
+        status: "Live",
+        type: "live",
+        intro: "A browser terminal for serial-connected hardware.",
+        description: "It uses Web Serial to provide a quick no-install way to talk to controllers and peripherals from the browser, which is useful when debugging firmware, setup flows, and machine hardware.",
+        screenshot: "assets/screenshots/javascript-webserial-terminal.png",
+        liveUrl: "https://petervanderwalt.github.io/javascript-webserial-terminal/",
+        repoUrl: "https://github.com/petervanderwalt/javascript-webserial-terminal",
+        tags: ["WebSerial", "Terminal", "Firmware", "Utility"]
+      },
+      {
+        title: "LM393 Calculator Deluxe",
+        category: "Electronics",
+        status: "Live",
+        type: "live",
+        intro: "A calculator and analysis tool for LM393 comparator designs.",
+        description: "I built it to make the resistor values, thresholds, and behavior around LM393 circuits quicker to work through and easier to inspect.",
+        screenshot: "assets/screenshots/lm393-calculator-deluxe.png",
+        liveUrl: "https://petervanderwalt.github.io/lm393-calculator-deluxe/",
+        repoUrl: "https://github.com/petervanderwalt/lm393-calculator-deluxe",
+        tags: ["Electronics", "Analog", "Calculator", "LM393"]
+      },
+      {
+        title: "STM32 Web Flasher",
+        category: "Firmware",
+        status: "Live",
+        type: "live",
+        intro: "A browser-based DFU flasher for STM32 firmware images.",
+        description: "I built it to make firmware updates simpler: connect the device, select the image, choose the interface, and flash.",
+        screenshot: "assets/screenshots/javascript-stm32-flasher.png",
+        liveUrl: "https://petervanderwalt.github.io/javascript-stm32-flasher/",
+        repoUrl: "https://github.com/petervanderwalt/javascript-stm32-flasher",
+        tags: ["STM32", "DFU", "Firmware", "WebUSB"]
+      }
+    ];
+
+    const statusClass = (status) => {
+      const normalized = status.toLowerCase();
+      if (normalized.includes("wip") || normalized.includes("progress")) return "wip";
+      if (normalized.includes("live")) return "live";
+      return "";
+    };
+
+    const filters = ["All", ...new Set(projects.map((project) => project.category))];
+    const filtersRoot = document.getElementById("filters");
+    const grid = document.getElementById("grid");
+    const empty = document.getElementById("empty");
+    let activeFilter = "All";
+
+    function renderFilters() {
+      filtersRoot.innerHTML = filters.map((filter) => `
+        <button class="tag ${filter === activeFilter ? "active" : ""}" data-filter="${filter}" type="button">${filter}</button>
+      `).join("");
+
+      [...filtersRoot.querySelectorAll("[data-filter]")].forEach((button) => {
+        button.addEventListener("click", () => {
+          activeFilter = button.dataset.filter;
+          renderFilters();
+          renderCards();
+        });
+      });
+    }
+
+    function renderCards() {
+      const visibleProjects = projects.filter((project) => {
+        const matchesFilter = activeFilter === "All" || project.category === activeFilter;
+        return matchesFilter;
+      });
+
+      grid.innerHTML = visibleProjects.map((project, index) => `
+        <article class="card" style="animation-delay:${index * 45}ms">
+          <div class="card-media">
+            <img src="${project.screenshot}" alt="${project.title} screenshot" loading="lazy">
+          </div>
+          <div class="card-body">
+            <div class="card-kicker">
+              <span>${project.category}</span>
+              <span class="status ${statusClass(project.status)}">${project.status}</span>
+            </div>
+            <h3>${project.title}</h3>
+            <p class="lede">${project.intro}</p>
+            <p class="blurb">${project.description}</p>
+            <div class="card-meta">
+              ${project.tags.map((tag) => `<span class="meta-chip">${tag}</span>`).join("")}
+            </div>
+            <div class="card-links">
+              <a href="${project.liveUrl}" target="_blank" rel="noreferrer">Open project</a>
+              ${project.repoUrl ? `<a href="${project.repoUrl}" target="_blank" rel="noreferrer">View repo</a>` : ""}
+              ${(project.extraLinks || []).map((link) => `<a href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>`).join("")}
+            </div>
+          </div>
+        </article>
+      `).join("");
+
+      empty.style.display = visibleProjects.length ? "none" : "block";
+    }
+
+    renderFilters();
+    renderCards();
+  </script>
+</body>
+</html>

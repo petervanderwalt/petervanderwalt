@@ -1,0 +1,335 @@
+[
+  {
+    "slug": "grblhal-sienci-compile",
+    "url": "https://petervanderwalt.github.io/grblhal_sienci_compile/",
+    "canonical": "",
+    "githubLinks": [],
+    "h1": "",
+    "headings": [
+      "Advanced Settings"
+    ],
+    "metaDescription": "",
+    "ogUrl": "",
+    "pageTitle": "Firmware Portal",
+    "paragraphs": [
+      "Disconnected",
+      "Drag file or click"
+    ],
+    "screenshot": "assets/screenshots/grblhal-sienci-compile.png"
+  },
+  {
+    "slug": "ooznest-control",
+    "url": "https://ooznest.github.io/ooznest-control",
+    "canonical": "",
+    "githubLinks": [],
+    "h1": "",
+    "headings": [
+      "G-Code Editor",
+      "Tools",
+      "Probing"
+    ],
+    "metaDescription": "Ooznest Machine Control Web UI for grblHAL CNC controllers. Control, monitor, and manage your CNC machine wirelessly.",
+    "ogUrl": "",
+    "pageTitle": "Ooznest Control v1.0.146",
+    "paragraphs": [
+      "Various tools and widgets — new tools added over time.",
+      "Description",
+      "For manual tool change, use the TLO buttons in the MTC modal (Set Ref + Measure) instead of managing Z offsets here. This tool table is primarily for ATC workflows.",
+      "Flatten a spoilboard or stock material using a surfacing bit. Ensure your spindle is trammed perpendicular to the bed, and set Z zero at the highest point.",
+      "Percentage of the tool diameter overlapped on each pass.",
+      "Spindle speed command added to the generated job (For Variable Speed spindles)."
+    ],
+    "screenshot": "assets/screenshots/ooznest-control.png"
+  },
+  {
+    "slug": "openbuilds-control",
+    "url": "https://github.com/OpenBuilds/OpenBuilds-CONTROL",
+    "repoOnly": true,
+    "canonical": "",
+    "githubLinks": [
+      "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2FOpenBuilds%2FOpenBuilds-CONTROL",
+      "https://github.com/features/copilot",
+      "https://github.com/features/ai/github-app",
+      "https://github.com/mcp",
+      "https://github.com/features/actions",
+      "https://github.com/features/codespaces",
+      "https://github.com/features/issues",
+      "https://github.com/features/code-review",
+      "https://github.com/features/code-quality",
+      "https://github.com/security/advanced-security"
+    ],
+    "h1": "Search code, repositories, users, issues, pull requests...",
+    "headings": [
+      "Navigation Menu",
+      "Search code, repositories, users, issues, pull requests...",
+      "Provide feedback",
+      "Saved searches",
+      "Use saved searches to filter your results more quickly",
+      "OpenBuilds/OpenBuilds-CONTROL"
+    ],
+    "metaDescription": "OpenBuilds CONTROL: Download from https://software.openbuilds.com - OpenBuilds/OpenBuilds-CONTROL",
+    "ogUrl": "https://github.com/OpenBuilds/OpenBuilds-CONTROL",
+    "pageTitle": "GitHub - OpenBuilds/OpenBuilds-CONTROL: OpenBuilds CONTROL: Download from https://software.openbuilds.com · GitHub",
+    "paragraphs": [
+      "We read every piece of feedback, and take your input very seriously.",
+      "To see all available qualifiers, see our documentation.",
+      "There was an error while loading. Please reload this page.",
+      "OpenBuilds CONTROL - Grbl Host / Interface for all CNC style machines running Grbl",
+      "Click to download latest version:",
+      "Click to see all past releases:"
+    ],
+    "screenshot": "assets/screenshots/openbuilds-control.png"
+  },
+  {
+    "slug": "openbuilds-cam",
+    "url": "https://cam.openbuilds.com/",
+    "canonical": "",
+    "githubLinks": [],
+    "h1": "",
+    "headings": [],
+    "metaDescription": "",
+    "ogUrl": "",
+    "pageTitle": "OpenBuilds CAM",
+    "paragraphs": [
+      "Please load some vectors from DXF (Polylines) or SVG (Paths); or Images (Traceable); or insert a Shape, Icon or some Text using the built-in tools to get started",
+      "Open Drawing",
+      "Please select some Vectors by clicking them in the viewer or using the Documents tree above. Hold down Ctrl to select multiples, Ctrl+A for Select-All, etc. Add them to a toolpath using the Create Toolpath button"
+    ],
+    "screenshot": "assets/screenshots/openbuilds-cam.png"
+  },
+  {
+    "slug": "cabinet-studio",
+    "url": "https://petervanderwalt.github.io/cabinet-studio/",
+    "canonical": "",
+    "githubLinks": [],
+    "h1": "Cabinet Settings",
+    "headings": [
+      "Cabinet Settings"
+    ],
+    "metaDescription": "",
+    "ogUrl": "",
+    "pageTitle": "Cabinet Studio",
+    "paragraphs": [
+      "Choose the door layout that suits this cabinet.",
+      "Choose how much shelf storage you want inside the cabinet.",
+      "Set hinge, shelf pin, and handle positions for this cabinet.",
+      "Carcass also drives shelves, drawer sides, and kickboard. Rear and fronts are tracked separately.",
+      "Control the stock sheet size, machining gap, and whether parts may rotate during nesting.",
+      "2 sheets · 10 parts · 46.0% utilization"
+    ],
+    "screenshot": "assets/screenshots/cabinet-studio.png"
+  },
+  {
+    "slug": "cam-engine-demo",
+    "url": "https://petervanderwalt.github.io/cam-engine/demo/",
+    "canonical": "",
+    "githubLinks": [],
+    "h1": "CAM Engine",
+    "headings": [
+      "CAM Engine",
+      "Shape",
+      "Operation",
+      "G-Code"
+    ],
+    "metaDescription": "",
+    "ogUrl": "",
+    "pageTitle": "CAM Engine Demo",
+    "paragraphs": [
+      "Toolpath demo with 3D preview."
+    ],
+    "screenshot": "assets/screenshots/cam-engine-demo.png"
+  },
+  {
+    "slug": "grblhal-docs",
+    "url": "https://petervanderwalt.github.io/grblhal_docs/01-Getting-Started/01-what-is-grblhal.html",
+    "canonical": "",
+    "githubLinks": [],
+    "h1": "What is grblHAL?",
+    "headings": [
+      "Documentation",
+      "What is grblHAL?",
+      "Overview",
+      "Core Architecture: The Hardware Abstraction Layer (HAL)",
+      "Key Features",
+      "Who Should Use grblHAL?"
+    ],
+    "metaDescription": "",
+    "ogUrl": "",
+    "pageTitle": "What is grblHAL?",
+    "paragraphs": [
+      "grblHAL is a sophisticated, high-performance CNC (Computer Numerical Control) firmware designed to control CNC machines, routers, mills, lathes, laser cutters, and other motion control systems. It represents a complete evolution of the popular open-source GRBL firmware, specifically engineered to leverage the power of modern 32-bit microcontrollers.",
+      "grblHAL interprets G-code commands (the standard programming language for CNC machines) and translates them into precise motion control signals that drive your machine's motors, spindle, and other peripherals. Think of it as the \"brain\" of your CNC machine - it takes instructions from your CAM software and executes them with precision and reliability.",
+      "Developed by Terje Io, grblHAL was created to address the limitations of 8-bit GRBL implementations and the fragmentation that occurred when various developers attempted to port GRBL to 32-bit platforms independently.",
+      "The defining feature of grblHAL is its Hardware Abstraction Layer (HAL) architecture. This design separates the core GRBL logic from processor-specific code, making the firmware:",
+      "This means whether you're running grblHAL on an ESP32, STM32, Teensy 4.1, or Raspberry Pi Pico, you get the same core functionality and feature set.",
+      "grblHAL is ideal for:"
+    ],
+    "screenshot": "assets/screenshots/grblhal-docs.png"
+  },
+  {
+    "slug": "cheetah",
+    "url": "https://github.com/petervanderwalt/cheetah",
+    "repoOnly": true,
+    "canonical": "",
+    "githubLinks": [
+      "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fpetervanderwalt%2Fcheetah",
+      "https://github.com/features/copilot",
+      "https://github.com/features/ai/github-app",
+      "https://github.com/mcp",
+      "https://github.com/features/actions",
+      "https://github.com/features/codespaces",
+      "https://github.com/features/issues",
+      "https://github.com/features/code-review",
+      "https://github.com/features/code-quality",
+      "https://github.com/security/advanced-security"
+    ],
+    "h1": "Search code, repositories, users, issues, pull requests...",
+    "headings": [
+      "Navigation Menu",
+      "Search code, repositories, users, issues, pull requests...",
+      "Provide feedback",
+      "Saved searches",
+      "Use saved searches to filter your results more quickly",
+      "petervanderwalt/cheetah"
+    ],
+    "metaDescription": "cheetah is a lightweight, filesystem-native Markdown documentation editor and static site generator. It runs on your laptop, edits files on your disk, builds to HTML you can FTP to a potato — and it does it without a single line of React, Vue, Angular, Docker, or database. Five dependencies. Zero frameworks. One purpose: get out of your way. - petervanderwalt/cheetah",
+    "ogUrl": "https://github.com/petervanderwalt/cheetah",
+    "pageTitle": "GitHub - petervanderwalt/cheetah: cheetah is a lightweight, filesystem-native Markdown documentation editor and static site generator. It runs on your laptop, edits files on your disk, builds to HTML you can FTP to a potato — and it does it without a single line of React, Vue, Angular, Docker, or database. Five dependencies. Zero frameworks. One purpose: get out of your way. · GitHub",
+    "paragraphs": [
+      "We read every piece of feedback, and take your input very seriously.",
+      "To see all available qualifiers, see our documentation.",
+      "The cheetah (Acinonyx jubatus) — 0 to 60 in three seconds. Not a fighter. A hunter. Built for speed, efficiency, and knowing exactly when to strike. Your documentation tool should be the same.",
+      "cheetah eats Docusaurus for breakfast. Wiki.js is still resolving dependencies. GitBook got declawed somewhere around the first bend.",
+      "Not by fighting. By being faster, leaner, and built for the terrain you actually run on. The internet loves cats — and this one does the work.",
+      "cheetah is a lightweight, filesystem-native Markdown documentation editor and static site generator. It runs on your laptop, edits files on your disk, builds to HTML you can FTP to a potato — and it does it without a single line of React, Vue, Angular, Docker, or database. Five dependencies. Zero frameworks. One purpose: get out of your way."
+    ],
+    "screenshot": "assets/screenshots/cheetah.png"
+  },
+  {
+    "slug": "javascript-gerber-viewer",
+    "url": "https://petervanderwalt.github.io/javascript-gerber-viewer/",
+    "canonical": "",
+    "githubLinks": [],
+    "h1": "",
+    "headings": [],
+    "metaDescription": "",
+    "ogUrl": "",
+    "pageTitle": "Gerber Viewer (2D, 3D, SVG and PNG export)",
+    "paragraphs": [],
+    "screenshot": "assets/screenshots/javascript-gerber-viewer.png"
+  },
+  {
+    "slug": "cam-community-fork",
+    "url": "https://petervanderwalt.github.io/CAM-Community-Fork/",
+    "canonical": "",
+    "githubLinks": [],
+    "h1": "",
+    "headings": [],
+    "metaDescription": "",
+    "ogUrl": "",
+    "pageTitle": "CAM Community Fork",
+    "paragraphs": [
+      "Please load some vectors from DXF (Polylines) or SVG (Paths); or Images (Traceable); or insert a Shape, Icon or some Text using the built-in tools to get started",
+      "Open Drawing",
+      "Select vectors in the viewer or Documents tree (Ctrl+click for multiples, Ctrl+A for All).Then use the Add Toolpath button above.",
+      "Let us help you get set up!",
+      "Set your machine's working area dimensions in mm",
+      "Select the attachments your machine has so we can generate appropriate G-Code"
+    ],
+    "screenshot": "assets/screenshots/cam-community-fork.png"
+  },
+  {
+    "slug": "3dcam",
+    "url": "https://petervanderwalt.github.io/3DCAM/",
+    "canonical": "",
+    "githubLinks": [],
+    "h1": "",
+    "headings": [],
+    "metaDescription": "",
+    "ogUrl": "",
+    "pageTitle": "3DCAM — CNC Toolpath Generator",
+    "paragraphs": [],
+    "screenshot": "assets/screenshots/3dcam.png"
+  },
+  {
+    "slug": "h100-vfd-configurator",
+    "url": "file:///C:/Users/User/AppData/Local/Temp/codex-clipboard-18b65416-8076-4ac2-83bb-f48bc4f6fd38.png",
+    "screenshotOnly": true,
+    "title": "H100 VFD Dashboard & Config Tool",
+    "pageTitle": "H100 VFD Dashboard & Config Tool",
+    "metaDescription": "",
+    "h1": "H100 VFD Dashboard",
+    "paragraphs": [],
+    "githubLinks": [
+      "https://github.com/petervanderwalt/H100_VFD_Configurator"
+    ]
+  },
+  {
+    "slug": "javascript-cam",
+    "url": "https://petervanderwalt.github.io/javascript-cam/",
+    "canonical": "",
+    "githubLinks": [],
+    "h1": "",
+    "headings": [],
+    "metaDescription": "Web CAM — Vector to G-Code toolpath generator",
+    "ogUrl": "",
+    "pageTitle": "Web CAM",
+    "paragraphs": [
+      "Drop SVG or DXF here"
+    ],
+    "screenshot": "assets/screenshots/javascript-cam.png"
+  },
+  {
+    "slug": "javascript-webserial-terminal",
+    "url": "https://petervanderwalt.github.io/javascript-webserial-terminal/",
+    "canonical": "",
+    "githubLinks": [],
+    "h1": "",
+    "headings": [],
+    "metaDescription": "",
+    "ogUrl": "",
+    "pageTitle": "Web Serial Terminal",
+    "paragraphs": [],
+    "screenshot": "assets/screenshots/javascript-webserial-terminal.png"
+  },
+  {
+    "slug": "lm393-calculator-deluxe",
+    "url": "https://petervanderwalt.github.io/lm393-calculator-deluxe/",
+    "canonical": "",
+    "githubLinks": [],
+    "h1": "",
+    "headings": [],
+    "metaDescription": "",
+    "ogUrl": "",
+    "pageTitle": "LM393 Calculator (Design & Analyze)",
+    "paragraphs": [
+      "10.50 kΩ",
+      "10.00 kΩ",
+      "26.10 kΩ",
+      "-- V",
+      "-- V",
+      "-- V"
+    ],
+    "screenshot": "assets/screenshots/lm393-calculator-deluxe.png"
+  },
+  {
+    "slug": "javascript-stm32-flasher",
+    "url": "https://petervanderwalt.github.io/javascript-stm32-flasher/",
+    "canonical": "",
+    "githubLinks": [],
+    "h1": "",
+    "headings": [
+      "Advanced Settings"
+    ],
+    "metaDescription": "",
+    "ogUrl": "",
+    "pageTitle": "WebDFU STM32Fx Firmware Flasher",
+    "paragraphs": [
+      "Disconnected",
+      "Choose a file or drag it here.",
+      "Supports .bin and .hex",
+      "Please select the correct interface for flashing:"
+    ],
+    "screenshot": "assets/screenshots/javascript-stm32-flasher.png"
+  }
+]
